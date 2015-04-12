@@ -47,7 +47,7 @@
             		<ul><li><a href="#">全局设置</a></li><li class="active"><a href="#">系统设置</a></li><li><a href="#">会员设置</a></li><li><a href="#">积分设置</a></li></ul>
                 </li>
                 <li class="active"><a href="system.jsp" class="icon-file-text"> 设置</a>
-					<ul><li><a href="cleanexercise">清空题库</a></li><li><a href="#">所有学生重置</a></li><li><a href="#">管理员管理</a></li></ul>
+					<ul><li><a href="cleanexercise">清空题库</a></li><li><a href="resetall">所有学生重置</a></li><li><a href="#">管理员管理</a></li></ul>
                 </li>
             </ul>
         </div>
