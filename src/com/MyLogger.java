@@ -18,7 +18,7 @@ public class MyLogger {
 	{
 		try {
 			Logger.getLogger("log").setLevel(Level.ALL);
-			SimpleDateFormat format=new SimpleDateFormat("yyyymmdd");
+			SimpleDateFormat format=new SimpleDateFormat("yyyymmddhh");
 			String date=format.format(new Date());
 			Handler handler=new FileHandler("%h/guoxue/"+date+"log.log",0,10);
 			handler.setLevel(Level.ALL);
