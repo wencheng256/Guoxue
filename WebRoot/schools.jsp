@@ -21,7 +21,6 @@
     <tr>
       <td class="title" colspan="5">山东大学（威海）学院列表</td>
     </tr>
-     <tr><td colspan="5"><a href="addschool.jsp"><input type="button" value="添加学院" id="add"/></a></td></tr>
     <tr>
       <td width="150px">学院编号</td>
       <td>学院名</td>
@@ -35,7 +34,7 @@
       <td><%=rs.getString(2)%></td>
       <td width="150px"><%=rs.getInt(3)%></td>
       <td width="150px"><%=rs.getInt(4)%></td>
-      <td width="150px"><a href="">添加</a>/<a href="changeschool.jsp?id=<%=rs.getString(1)%>">修改</a>/<a href="delete?table=school&id=<%=rs.getString(1)%>">删除</a></td>
+      <td width="150px"><a href="schoolclass.jsp?id=<%=rs.getInt(1)%>">查看班级</a></td>
     </tr>
     <%} %>
     </table>
