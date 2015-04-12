@@ -1,4 +1,5 @@
 <%@ page language="java" import="com.*" contentType="text/html; charset=utf-8" %>
+<%MyLogger.open(); %>
 <%
 	Admin admin=(Admin)session.getAttribute("admin");
 	if(admin!=null)

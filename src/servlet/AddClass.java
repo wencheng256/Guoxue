@@ -6,6 +6,8 @@ import com.Mysql;
 
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -63,13 +65,16 @@ public class AddClass extends HttpServlet {
 		try {
 			Mysql mysql=Mysql.getInstance();
 			mysql.insert("class", "name,school","'"+name+"',"+school);
+			Logger.getLogger("log").log(Level.INFO, name+"ç­çº§åˆ›å»ºæˆåŠŸ");
 			response.sendRedirect("class.jsp");
 		} catch (ClassNotFoundException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO ï¿½Ô¶ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
 			out.println(e.getMessage());
+			Logger.getLogger("log").log(Level.WARNING,e.getMessage());
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO ï¿½Ô¶ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
 			out.println(e.getMessage());
+			Logger.getLogger("log").log(Level.WARNING,e.getMessage());
 		}
 	}
 

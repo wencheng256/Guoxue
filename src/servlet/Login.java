@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -69,6 +71,7 @@ public class Login extends HttpServlet {
 			{
 				Admin admin=new Admin(name);
 				session.setAttribute("admin", admin);
+				Logger.getLogger("log").log(Level.INFO,name+"已登录");
 				response.sendRedirect("index.jsp");
 			}else
 			{
