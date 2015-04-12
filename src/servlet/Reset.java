@@ -3,6 +3,8 @@ package servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -51,10 +53,12 @@ public class Reset extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
+			Logger.getLogger("log").log(Level.WARNING,e.getMessage());
 			response.sendRedirect("error.html");
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
+			Logger.getLogger("log").log(Level.WARNING,e.getMessage());
 			response.sendRedirect("error.html");
 		}
 	}

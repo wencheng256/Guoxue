@@ -3,6 +3,8 @@ package servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -70,11 +72,13 @@ public class AddExercise extends HttpServlet {
 			mysql.insert("exercise","content,select_a,select_b,select_c,select_d,select_correct","'"+content+"','"+a+"','"+b+"','"+c+"','"+d+"','"+cor+"'");
 			response.sendRedirect("exercise.jsp");
 		} catch (ClassNotFoundException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO ï¿½Ô¶ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
 			out.print(e.getMessage());
+			Logger.getLogger("log").log(Level.WARNING,e.getMessage());
 		} catch (SQLException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO ï¿½Ô¶ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
 			out.print(e.getMessage());
+			Logger.getLogger("log").log(Level.WARNING,e.getMessage());
 		}
 	}
 

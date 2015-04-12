@@ -80,10 +80,12 @@ public class Login extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
+			Logger.getLogger("log").log(Level.WARNING,e.getMessage());
 			response.sendRedirect("error.html");
 		} catch (SQLException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
+			Logger.getLogger("log").log(Level.WARNING,e.getMessage());
 			response.sendRedirect("error.html");
 		}
 	}

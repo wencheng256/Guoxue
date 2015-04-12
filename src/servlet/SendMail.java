@@ -2,6 +2,8 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.Email;
 
@@ -79,9 +81,11 @@ public class SendMail extends HttpServlet {
 			out.println("yes");
 		} catch (AddressException e) {
 			out.println("发送失败");
+			Logger.getLogger("log").log(Level.WARNING,e.getMessage());
 			response.sendRedirect("error.html");
 		} catch (MessagingException e) {
 			out.println("发送失败");
+			Logger.getLogger("log").log(Level.WARNING,e.getMessage());
 			response.sendRedirect("error.html");
 		}
 			
