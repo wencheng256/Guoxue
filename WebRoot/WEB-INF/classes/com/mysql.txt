@@ -1,0 +1,4 @@
+localhost
+3306
+root
+abc123
