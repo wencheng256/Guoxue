@@ -6,7 +6,7 @@
 	int prev=0,next=0;
 	int maxpage=0,pagesize=20;
 	prev=now==1?1:now-1;
-	String sql="SELECT count(a.id),b.name,c.name,b.id from `user` as a,class as b,school as c WHERE a.class=b.id and b.school=c.id order by b.school";
+	String sql="SELECT count(a.id),b.name,c.name,b.id from `user` as a,class as b,school as c WHERE a.class=b.id and b.school=c.id group by a.class order by b.school";
 	
 	if(request.getParameter("class")!=null)
 	{
@@ -59,11 +59,10 @@
       <td width="150px"><a href="classperson.jsp?class=<%=rs.getString(4)%>">查看成绩</a></td>
    	 </tr>
    	 
-   	  <tr>
+    <%} %>
+       <tr>
       <td style="textalign:center;"colspan="6"><a href="classes.jsp?page=<%=prev%>" class="page">上一页 </a><span class="xin">当前第 <%=now%> 页共 <%=maxpage%>  页 <%=con%> 个班级 </span><a href="classes.jsp?page=<%=next%>"class="page">下一页</a></td>
    	  </tr>
-   	  
-    <%} %>
     </table>
 </body>
 </html>

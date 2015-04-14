@@ -22,7 +22,7 @@ public class MyLogger {
 			String date=format.format(new Date());
 			Handler handler=new FileHandler("%h/guoxue/"+date+".log",0,10);
 			handler.setLevel(Level.ALL);
-			Logger.getLogger("log").addHandler(handler);
+			//Logger.getLogger("log").addHandler(handler);
 			System.out.println("日志类启动成功");
 		} catch (SecurityException e) {
 			// TODO 自动生成的 catch 块

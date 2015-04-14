@@ -23,10 +23,11 @@ public class Mysql {
 		Scanner in=new Scanner(getClass().getResourceAsStream("mysql.txt"));
 		String host=in.nextLine();
 		String duan=in.nextLine();
+		String db=in.nextLine();
 		String username=in.nextLine();
 		String pass=in.nextLine();
 		
-		url="jdbc:mysql://"+host+":"+duan+"/guoxue?useUnicode=true&characterEncoding=utf-8";
+		url="jdbc:mysql://"+host+":"+duan+"/"+db+"?useUnicode=true&characterEncoding=utf-8";
 		connection=DriverManager.getConnection(url,username,pass);
 		statement=connection.createStatement();
 		select=connection.prepareStatement("select * from ?");
