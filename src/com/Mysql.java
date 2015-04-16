@@ -27,7 +27,7 @@ public class Mysql {
 		String username=in.nextLine();
 		String pass=in.nextLine();
 		
-		url="jdbc:mysql://"+host+":"+duan+"/"+db+"?useUnicode=true&characterEncoding=utf-8";
+		url="jdbc:mysql://"+host+":"+duan+"/"+db+"?useUnicode=true&characterEncoding=utf-8&    autoReconnect=true";
 		connection=DriverManager.getConnection(url,username,pass);
 		statement=connection.createStatement();
 		select=connection.prepareStatement("select * from ?");
